@@ -1,7 +1,10 @@
+
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>TIRAWAT Website</title>
+  <title>geomni</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -11,19 +14,25 @@
   <style>
   .fakeimg {
     height: 200px;
-    background: rgb(184, 158, 158);
+    background: #d0a36e;
   }
   </style>
 </head>
 <body>
 
-<div class="jumbotron text-center" style="margin-bottom:0"style='background-color: #ff2801;'>
-  <h1>TIRAWAT Page</h1>
+<div class="jumbotron text-center"  style="margin-bottom:0">
+  <img src="{% static '/images/logo.png' %}" alt="" width = 150>
+  <h1>geomni</h1>
   <p>Portfolio</p> 
 </div>
 
-<nav class="navbar navbar-expand-sm navbar-dark " style='background-color: #ff2801;'>
-  <a class="navbar-brand" href="#">TIRAWAT</a>
+<nav class="navbar navbar-expand-sm navbar-dark " style='background-color: #d0a36e;'>
+
+  <a class="navbar-brand" href="#">
+    
+    <img src="{% static '/images/logo2.png' %}" alt="" width = 40>
+
+  </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
