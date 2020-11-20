@@ -19,4 +19,7 @@ def Service(request):
 def Contact(request):
 	return render(request,'tirawat/contact.html')
 
+def Index(request):
+	return render(request,'tirawat/index.html')
+
 
