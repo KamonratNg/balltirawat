@@ -11,4 +11,5 @@ urlpatterns = [
     path('index/', Index,name='index-page'),
     path('portfolio/', Portfolio,name='portfolio-page'),
     path('team/', Team,name='team-page'),
+    path('map/', myFirstMap,name='map-page'),
 ]
