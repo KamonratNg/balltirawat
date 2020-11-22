@@ -22,4 +22,8 @@ def Contact(request):
 def Index(request):
 	return render(request,'tirawat/index.html')
 
+def Portfolio(request):
+	return render(request,'tirawat/portfolio.html')
 
+def Team(request):
+	return render(request,'tirawat/team.html')
