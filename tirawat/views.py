@@ -45,7 +45,7 @@ def myFirstMap(request):
     mapConfig["legendbordercolor"] = "#ffffff"
     mapConfig["legendallowdrag"] = "0"
     mapConfig["legendshadow"] = "0"
-    mapConfig["caption"] = "Website Visits for the month of March 2018"
+    mapConfig["caption"] = "Activity Map"
     mapConfig["connectorcolor"]= "000000"
     mapConfig["fillalpha"]= "80"
     mapConfig["hovercolor"]= "CCCCCC"
@@ -57,16 +57,16 @@ def myFirstMap(request):
         "code": "#FFE0B2",
         "gradient": "1",
         "color": [{
-            "minValue": "0.5",
-            "maxValue": "1",
+            "minValue": "0.0",
+            "maxValue": "5.0",
             "code": "#FFD74D"
         }, {
-            "minValue": "1.0",
-            "maxValue": "2.0",
+            "minValue": "5.0",
+            "maxValue": "10.0",
             "code": "#FB8C00"
         }, {
-            "minValue": "2.0",
-            "maxValue": "3.0",
+            "minValue": "10.0",
+            "maxValue": "15.0",
             "code": "#E65100"
         }]
     }
@@ -77,64 +77,83 @@ def myFirstMap(request):
 
     # Map data array
     mapDataArray = [
-        ["001", "2834", "1"],
-        ["003", "3182", "1"],
-        ["005", "3280", "1"],
-        ["007", "911", "1"],
-        ["009", "292", "1"],
-        ["011", "530", "1"],
-        ["013", "2515", "1"],
-        ["015", "728", "1"],
-        ["017", "1974", "1"],
-        ["019", "848", "1"],
-        ["021", "3278", "1"],
-        ["023", "4463", "1"],
-        ["025", "1198", "1"],
-        ["027", "378", "1"],
-        ["029", "2610", "1"],
-        ["031", "1200", "1"],
-        ["033", "3820", "1"],
-        ["035", "940", "1"],
-        ["037", "3416", "1"],
-        ["039", "4004", "1"],
-        ["041", "1604", "1"],
-        ["043", "4011", "1"],
-        ["045", "3203", "1"],
-        ["047", "3775", "1"],
-        ["049", "2721", "1"],
-        ["051", "3417", "1"],
-        ["053", "1530", "1"],
-        ["055", "412", "1"],
-        ["057", "3434", "1"],
-        ["059", "1670", "1"],
-        ["061", "1274", "1"],
-        ["063", "4339", "1"],
-        ["065", "2073", "1"],
-        ["067", "1018", "1"],
-        ["069", "3967", "1"],
-        ["071", "3401", "1"],
-        ["073", "3307", "1"],
-        ["075", "1938", "1"],
-        ["077", "489", "1"],
-        ["079", "3207", "1"],
-        ["081", "2295", "1"],
-        ["083", "2747", "1"],
-        ["085", "1114", "1"],
-        ["087", "3400", "1"],
-        ["089", "784", "1"],
-        ["091", "1673", "1"],
-        ["093", "4274", "1"],
-        ["095", "4509", "1"],
-        ["097", "3862", "1"],
-        ["099", "1356", "1"],
-        ["101", "4126", "1"],
-        ["103", "1314", "1"],
-        ["105", "1807", "1"],
-        ["107", "4026", "1"],
-        ["109", "3456", "1"],
-        ["111", "1393", "1"],
-        ["113", "1500", "1"],
-        ["115", "2218", "1"]
+        #["TH.AC",	"1", "1"],      #AC	Amnat Charoen
+        #["TH.AT",	"1", "1"],      #AT	Ang Thong
+        ["TH.AU",	"10", "1"],      #AU	Ayutthaya
+        ["TH.BG",	"15", "1"],      #BG	Bangkok
+        #["TH.BK",	"1", "1"],      #BK	BuengKan
+        #["TH.BR",	"1", "1"],      #BR	Buri Ram
+        ["TH.CC",	"5", "1"],      #CC	Chachoengsao
+        #["TH.CN",	"1", "1"],      #CN	Chai Nat
+        #["TH.CY",	"1", "1"],      #CY	Chaiyaphum
+        #["TH.CT",	"1", "1"],      #CT	Chanthaburi
+        #["TH.CM",	"1", "1"],      #CM	Chiang Mai
+        #["TH.CR",	"1", "1"],      #CR	Chiang Rai
+        ["TH.CB",	"2", "1"],      #CB	Chon Buri
+        #["TH.CP",	"1", "1"],      #CP	Chumphon
+        #["TH.KL",	"1", "1"],      #KL	Kalasin
+        #["TH.KP",	"1", "1"],      #KP	Kamphaeng Phet
+        #["TH.KN",	"1", "1"],      #KN	Kanchanaburi
+        #["TH.KK",	"1", "1"],      #KK	Khon Kaen
+        #["TH.KR",	"1", "1"],      #KR	Krabi
+        #["TH.LG",	"1", "1"],      #LG	Lampang
+        #["TH.LN",	"1", "1"],      #LN	Lamphun
+        #["TH.LE",	"1", "1"],      #LE	Loei
+        #["TH.LB",	"1", "1"],      #LB	Lop Buri
+        #["TH.MH",	"1", "1"],      #MH	Mae Hong Son
+        #["TH.MS",	"1", "1"],      #MS	Maha Sarakham
+        #["TH.MD",	"1", "1"],      #MD	Mukdahan
+        #["TH.NN",	"1", "1"],      #NN	Nakhon Nayok
+        #["TH.NP",	"1", "1"],      #NP	Nakhon Pathom
+        #["TH.NF",	"1", "1"],      #NF	Nakhon Phanom
+        ["TH.NR",	"3", "1"],      #NR	Nakhon Ratchasima
+        #["TH.NS",	"1", "1"],      #NS	Nakhon Sawan
+        #["TH.NT",	"3", "1"],      #NT	Nakhon Si Thammarat
+        #["TH.NA",	"1", "1"],      #NA	Nan
+        #["TH.NW",	"1", "1"],      #NW	Narathiwat
+        #["TH.NB",	"1", "1"],      #NB	Nong Bua Lamphu
+        #["TH.NK",	"1", "1"],      #NK	Nong Khai
+        #["TH.NO",	"1", "1"],      #NO	Nonthaburi
+        ["TH.PT",	"5", "1"],      #PT	Pathum Thani
+        #["TH.PI",	"1", "1"],      #PI	Pattani
+        #["TH.PG",	"1", "1"],      #PG	Phang Nga
+        #["TH.PL",	"1", "1"],      #PL	Phatthalung
+        #["TH.PY",	"1", "1"],      #PY	Phayao
+        #["TH.PH",	"1", "1"],      #PH	Phetchabun
+        #["TH.PE",	"1", "1"],      #PE	Phetchaburi
+        #["TH.PC",	"1", "1"],      #PC	Phichit
+        #["TH.PS",	"1", "1"],      #PS	Phitsanulok
+        #["TH.PR",	"1", "1"],      #PR	Phrae
+        #["TH.PU",	"1", "1"],      #PU	Phuket
+        #["TH.PB",	"1", "1"],      #PB	Prachin Buri
+        #["TH.PK",	"1", "1"],      #PK	Prachuap Khiri Khan
+        #["TH.RN",	"1", "1"],      #RN	Ranong
+        #["TH.RT",	"1", "1"],      #RT	Ratchaburi
+        #["TH.RY",	"1", "1"],      #RY	Rayong
+        #["TH.RE",	"1", "1"],      #RE	Roi Et
+        #["TH.SK",	"1", "1"],      #SK	Sa Kaeo
+        #["TH.SN",	"1", "1"],      #SN	Sakon Nakhon
+        ["TH.SP",	"7", "1"],      #SP	Samut Prakan
+        #["TH.SS",	"1", "1"],      #SS	Samut Sakhon
+        #["TH.SM",	"1", "1"],      #SM	Samut Songkhram
+        #["TH.SR",	"1", "1"],      #SR	Saraburi
+        #["TH.SA",	"1", "1"],      #SA	Satun
+        #["TH.SI",	"1", "1"],      #SI	Si Sa Ket
+        #["TH.SB",	"1", "1"],      #SB	Sing Buri
+        #["TH.SG",	"1", "1"],      #SG	Songkhla
+        #["TH.SO",	"1", "1"],      #SO	Sukhothai
+        ["TH.SH",	"3", "1"],      #SH	Suphan Buri
+        #["TH.ST",	"1", "1"],      #ST	Surat Thani
+        #["TH.SU",	"1", "1"],      #SU	Surin
+        #["TH.TK",	"1", "1"],      #TK	Tak
+        #["TH.TG",	"1", "1"],      #TG	Trang
+        #["TH.TT",	"1", "1"],      #TT	Trat
+        #["TH.UR",	"1", "1"],      #UR	Ubon Ratchathani
+        #["TH.UN",	"1", "1"],      #UN	Udon Thani
+        #["TH.UT",	"1", "1"],      #UT	Uthai Thani
+        #["TH.UD",	"1", "1"],      #UD	Uttaradit
+        #["TH.YL",	"1", "1"],      #YL	Yala
+        #["TH.YS",	"1", "1"],      #YS	Yasothon
     ]
 
     # Iterate through the data in `mapDataArray` and insert in to the `dataSource["data"]` list.
@@ -149,7 +168,7 @@ def myFirstMap(request):
 
     # Create an object for the world map using the FusionCharts class constructor
     # The chart data is passed to the `dataSource` parameter.
-    fusionMap = FusionCharts("maps/world", "myFirstMap", "650", "450", "myFirstmap-container", "json", dataSource)
+    fusionMap = FusionCharts("maps/thailand", "myFirstMap", "1000", "600", "Map", "json", dataSource)
 
     # returning complete JavaScript and HTML code, which is used to generate map in the browsers.
     return render(request, 'tirawat/map.html', {

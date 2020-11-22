@@ -7,14 +7,22 @@
 <head>
     <title>FC-python wrapper</title>
     {% load static %}
-    <script src="{% static '/js/fusioncharts.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/fusioncharts.js' %}"></script>
     <script src="{% static '/js/fusioncharts.maps.js' %}"></script>
     <script src="{% static '/js/maps/fusioncharts.world.js' %}"></script>
-    <script src="{% static '/js/themes/fusioncharts.theme.fusion.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/themes/fusioncharts.theme.fusion.js' %}"></script>
 </head>
 
 <body>
-    <div id="myFirstchart-container">{{ output|safe }}</div>
+
+    <div class="container">
+
+        <div class="row">
+          <div class="col-12 d-flex justify-content-center">
+            <div id="Map">{{ output|safe }}</div>
+          </div>
+        </div>
+    </div>
 </body>
 
 
