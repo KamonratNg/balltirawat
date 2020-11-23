@@ -12,4 +12,5 @@ urlpatterns = [
     path('portfolio/', Portfolio,name='portfolio-page'),
     path('team/', Team,name='team-page'),
     path('map/', myFirstMap,name='map-page'),
+    path('blog/', Blog,name='blog-page'),
 ]

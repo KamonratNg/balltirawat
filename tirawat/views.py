@@ -29,6 +29,9 @@ def Portfolio(request):
 def Team(request):
 	return render(request,'tirawat/team.html')
 
+def Blog(request):
+	return render(request,'tirawat/blog.html')
+
 def myFirstMap(request):
 
     # Chart data is passed to the `dataSource` parameter, as dict, in the form of key - value pairs.
