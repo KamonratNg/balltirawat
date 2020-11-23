@@ -32,6 +32,9 @@ def Team(request):
 def Blog(request):
 	return render(request,'tirawat/blog.html')
 
+def blogSingle(request):
+	return render(request,'tirawat/blog-single.html')
+
 def myFirstMap(request):
 
     # Chart data is passed to the `dataSource` parameter, as dict, in the form of key - value pairs.
